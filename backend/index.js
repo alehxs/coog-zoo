@@ -1682,6 +1682,7 @@ const getTicketReport = (startDate, endDate, exhibits, res) => {
       ORDER BY count DESC
     `,
     
+    // Modified to include is_deleted check
     exhibitPopularity: `
       SELECT 
         e.Name as name,
@@ -1691,6 +1692,7 @@ const getTicketReport = (startDate, endDate, exhibits, res) => {
       LEFT JOIN Ticket t ON e.ID = t.Exhibit_ID 
         AND t.Purchase_Date BETWEEN ? AND ?
         ${exhibitFilter}
+      WHERE e.is_deleted = 0
       GROUP BY e.ID, e.Name
       ORDER BY tickets DESC
     `,
