@@ -13,7 +13,7 @@ function ManageEvents({ eventData, setEventData, addEvent, eventId, setEventId, 
         const fetchEvents = async () => {
         
           try { 
-            const response = await fetch('https://coogzoobackend.vercel.app/events');
+            const response = await fetch('https://coog-zoo.onrender.com/events');
             if (!response.ok) {
               throw new Error('Failed to fetch events');
             }
@@ -40,7 +40,7 @@ function ManageEvents({ eventData, setEventData, addEvent, eventId, setEventId, 
           return;
         }
         try {
-          const response = await fetch(`https://coogzoobackend.vercel.app/update-event?id=${updateData.id}`, {
+          const response = await fetch(`https://coog-zoo.onrender.com/update-event?id=${updateData.id}`, {
             method: 'PUT',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(updateData),
@@ -60,7 +60,7 @@ function ManageEvents({ eventData, setEventData, addEvent, eventId, setEventId, 
     };
     const handleDeleteEvent = async () => {
         try {
-          const response = await fetch(`https://coogzoobackend.vercel.app/remove-event?id=${eventId}`, {
+          const response = await fetch(`https://coog-zoo.onrender.com/remove-event?id=${eventId}`, {
             method: 'DELETE',
           });
   

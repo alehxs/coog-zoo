@@ -22,7 +22,7 @@ const Account = () => {
 
       try {
         const response = await fetch(
-          `https://coogzoobackend.vercel.app/profile?email=${encodeURIComponent(userEmail)}&type=${encodeURIComponent(displayRole)}`,
+          `https://coog-zoo.onrender.com/profile?email=${encodeURIComponent(userEmail)}&type=${encodeURIComponent(displayRole)}`,
           {
             method: 'GET',
             headers: {
