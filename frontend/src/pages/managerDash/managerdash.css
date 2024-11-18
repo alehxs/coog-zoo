@@ -1,52 +1,113 @@
-/* Dashboard Section Styles */
-.dashboard-section {
-    padding: 20px;
-    min-height: calc(100vh - 200px);
-  }
-  
-  .welcome-container {
-    background-color: #fff;
-    border-radius: 10px;
-    padding: 25px;
-    margin-top: 20px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    border: 1px solid #e0e0e0;
-  }
-  
-  .welcome-container h2 {
-    color: #C8102E;
-    margin-bottom: 15px;
-    font-size: 24px;
-  }
-  
-  .welcome-container p {
-    color: #333;
-    font-size: 16px;
-    margin-bottom: 20px;
-  }
-  
-  .dashboard-features ul {
-    list-style-type: none;
-    padding: 0;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 15px;
-  }
-  
-  .dashboard-features li {
-    padding: 12px 15px;
-    background-color: #f8f9fa;
-    border-radius: 6px;
-    color: #333;
-    font-size: 15px;
+/* Import the League Gothic font */
+@import url('https://fonts.googleapis.com/css2?family=League+Gothic&display=swap');
+
+/* Manager Dashboard Container */
+.manager-dash {
     display: flex;
+    font-family: 'Inter', sans-serif;
+    padding-top: 80px; /* Adjust padding to ensure content starts below navbar */
+}
+
+/* Sidebar Styling */
+.sidebar {
+    width: 300px;
+    background-color:#C8102E;
+    padding: 20px;
+    color: white;
+    border-radius: 10px;
+    height: calc(70vh);
+    position: absolute;
+    left: -70px;
+    top: 190px;
+    overflow-y: auto;
+    z-index: 500;
+    transition: margin-left 0.3s ease;
+}
+
+.sidebar.collapsed {
+    margin-left: -28%;
+    gap: 0.5%;
+}
+
+.toggle-sidebar {
+    font-family: 'Inter', sans-serif;
+    position: absolute;
+    top: 130px;
+    left: 15px;
+    width: 200px;
+    height: 40px;
+    z-index: 1000;
+    border: #7C000F;
+    border-radius: 5px;
+    background-color: #C8102E;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-size: 25px;
+    transition: margin-left 0.3s ease;
+}
+
+.sidebar h2 {
+    margin-top: 10px;
+    margin-left: 70px;
+    font-size: 23px;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    margin-left: 70px;
+    padding: 0;
+}
+
+.sidebar li {
+    font-size: 17px;
+    padding: 15px;
+    margin-left: 20px;
+    left: 40px;
+    cursor: pointer;
+    color: #ecf0f1;
+}
+
+.sidebar li:hover {
+    background-color: #7C000F;
+}
+
+/* Content Area */
+.content {
+    margin-left: 380px;
+    flex: 1;
+}
+
+.content h1 {
+    color: #C8102E; /* Set the text color to red */
+}
+
+/* Modal */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
     align-items: center;
-  }
-  
-  .dashboard-features li:before {
-    content: "•";
-    color: #C8102E;
-    font-weight: bold;
-    margin-right: 10px;
-  }
+    z-index: 1500; /* Ensure modal is on top of everything */
+}
+
+.modal-content {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    position: relative;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 20px;
+}
   
